@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;600;700&family=Playfair+Display:wght@600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #FFFFFF;
+    color: #111111;
+    @apply antialiased;
+  }
+  h1,h2,h3,h4,h5,h6 { font-family: 'Poppins', sans-serif; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply font-button font-semibold bg-red-brand text-white px-6 py-3 rounded-sm tracking-wider uppercase text-sm transition-all duration-300 hover:bg-maroon hover:shadow-premium active:scale-95;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .btn-outline {
+    @apply font-button font-semibold border-2 border-maroon text-maroon px-6 py-3 rounded-sm tracking-wider uppercase text-sm transition-all duration-300 hover:bg-maroon hover:text-white active:scale-95;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .btn-ghost {
+    @apply font-button font-semibold text-dark px-6 py-3 tracking-wider uppercase text-sm transition-all duration-300 hover:text-maroon;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .card {
+    @apply bg-white rounded-sm shadow-sm hover:shadow-premium transition-shadow duration-300;
+  }
+  .input-field {
+    @apply w-full border border-lgray px-4 py-3 text-sm focus:outline-none focus:border-maroon transition-colors duration-200 bg-white;
+  }
+  .section-title {
+    @apply font-heading font-bold text-dark text-3xl md:text-4xl tracking-tight relative inline-block pb-3;
+  }
+  .section-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 56px;
+    height: 2px;
+    background: #C6A15B;
+  }
+  .badge {
+    @apply inline-block bg-red-brand text-white text-xs font-button font-semibold px-2 py-0.5 rounded-sm tracking-wider;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .nav-link {
+    @apply text-dark font-body text-sm font-medium hover:text-maroon transition-colors duration-200 tracking-wide;
+  }
+  .skeleton {
+    @apply bg-lgray animate-pulse rounded-sm;
+  }
+}
+
+/* Swiper custom */
+.swiper-pagination-bullet-active { background: #1F5A24 !important; }
+.swiper-button-next, .swiper-button-prev { color: #1F5A24 !important; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #ECECEC; }
+::-webkit-scrollbar-thumb { background: #1F5A24; border-radius: 3px; }
+
+/* Page transitions */
+.page-enter { opacity: 0; transform: translateY(12px); }
+.page-enter-active { opacity: 1; transform: translateY(0); transition: all 0.3s ease; }
